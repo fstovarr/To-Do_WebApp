@@ -80,24 +80,26 @@
         <v-card class="mx-auto card" shaped>
           <v-card-title>USERS</v-card-title>
 
-          <v-list class="scroll-y">
+          <v-list class="overflow-y-auto" style="max-height: 70vh">
             <template v-for="item in users">
               <v-list-item :key="item.id">
                 <v-list-item-content>
                   <v-list-item-title v-text="item.name"></v-list-item-title>
                 </v-list-item-content>
                 <v-list-item-action>
-                  <v-btn icon @click="userSelected(item)">
-                    <v-icon color="grey lighten-1">{{icons.mdiEye}}</v-icon>
-                  </v-btn>
+                  <div class="d-flex">
+                    <v-btn icon @click="userSelected(item)">
+                      <v-icon color="grey lighten-1">{{icons.mdiEye}}</v-icon>
+                    </v-btn>
 
-                  <v-btn icon @click.stop="openDialog(item)">
-                    <v-icon color="grey lighten-1">{{icons.mdiPencil}}</v-icon>
-                  </v-btn>
+                    <v-btn icon @click.stop="openDialog(item)">
+                      <v-icon color="grey lighten-1">{{icons.mdiPencil}}</v-icon>
+                    </v-btn>
 
-                  <v-btn icon @click="deleteUserSelected(item.id)">
-                    <v-icon color="grey lighten-1">delete</v-icon>
-                  </v-btn>
+                    <v-btn icon @click="deleteUserSelected(item.id)">
+                      <v-icon color="grey lighten-1">delete</v-icon>
+                    </v-btn>
+                  </div>
                 </v-list-item-action>
               </v-list-item>
             </template>
@@ -131,13 +133,15 @@
               </v-list-item-content>
 
               <v-list-item-action>
-                <v-btn icon @click.stop="editTaskUser(item)">
-                  <v-icon color="grey lighten-1">{{icons.mdiPencil}}</v-icon>
-                </v-btn>
+                <div class="d-flex">
+                  <v-btn icon @click.stop="editTaskUser(item)">
+                    <v-icon color="grey lighten-1">{{icons.mdiPencil}}</v-icon>
+                  </v-btn>
 
-                <v-btn icon @click="deleteTaskSelected(item.id)">
-                  <v-icon color="grey lighten-1">delete</v-icon>
-                </v-btn>
+                  <v-btn icon @click="deleteTaskSelected(item.id)">
+                    <v-icon color="grey lighten-1">delete</v-icon>
+                  </v-btn>
+                </div>
               </v-list-item-action>
             </v-list-item>
           </v-list>
