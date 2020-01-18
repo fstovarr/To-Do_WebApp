@@ -52,3 +52,29 @@ npm run serve # The server will run on port 8001
 
 ## Tests
 
+### 1. View the list of users
+
+![alt text](https://i.ibb.co/fn2BQcm/image.png "Logo Title Text 1")
+
+The previous image is the main screen of the web app, in the left side you will find the users list and in the right side their tasks.
+
+### 2. Update the uses
+
+The pencil button in the user's right shows a dialog in which his information could be updated. You can edit the user's name and when you finish, the OK button must be pressed to save the changes.
+
+![alt text](https://i.ibb.co/G9m5LnY/image.png "Logo Title Text 1")
+
+
+
+the eye allows to see the tasks of a determined user,, and the thrash destroy the user and his tasks in the system.
+
+
+When the app's user clicks on the eye button, the right side of screen will change and it will show the next view. Here will be all tasks of user 
+
+![alt text](https://i.ibb.co/51nM2Xk/image.png "Logo Title Text 1")
+
+![alt text](https://i.ibb.co/mRs3wzW/image.png "Logo Title Text 1")
+
+![alt text](https://i.ibb.co/9ZJFtk8/image.png "Logo Title Text 1")
+
+![alt text](https://i.ibb.co/DknG6Sc/image.png "Logo Title Text 1")
