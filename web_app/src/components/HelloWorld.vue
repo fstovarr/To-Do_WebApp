@@ -116,7 +116,7 @@
             style="padding-left: 20px; margin-bottom: 20px;"
             v-if="tasks != undefined"
           >
-            <v-btn rounded color="primary" dark @click="dialogs.addTask = true">Add task</v-btn>
+            <v-btn rounded color="accent" dark @click="dialogs.addTask = true">Add task</v-btn>
           </div>
 
           <v-list v-if="tasks != undefined && tasks.length > 0">
@@ -125,8 +125,8 @@
               :key="item.id"
               style="padding-left: 40px; padding-right: 40px;"
             >
-              <v-icon v-if="item.state == 'todo'">{{icons.mdiCheckboxBlankCircle}}</v-icon>
-              <v-icon v-else>{{icons.mdiCheckboxMarkedCircle}}</v-icon>
+              <v-icon v-if="item.state == 'todo'">{{icons.mdiCheckboxBlankOutline}}</v-icon>
+              <v-icon v-else>{{icons.mdiCheckBoxOutline}}</v-icon>
 
               <v-list-item-content>
                 <v-list-item-title v-text="item.description"></v-list-item-title>
@@ -162,8 +162,8 @@
 import Vue from "vue";
 import Http from "../util/http_common";
 import {
-  mdiCheckboxBlankCircle,
-  mdiCheckboxMarkedCircle,
+  mdiCheckboxBlankOutline,
+  mdiCheckBoxOutline,
   mdiPencil,
   mdiEye
 } from "@mdi/js";
@@ -176,8 +176,8 @@ export default Vue.extend({
       { text: "Done", value: "done" }
     ];
     this.icons = {
-      mdiCheckboxBlankCircle,
-      mdiCheckboxMarkedCircle,
+      mdiCheckboxBlankOutline,
+      mdiCheckBoxOutline,
       mdiPencil,
       mdiEye
     };
