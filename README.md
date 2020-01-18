@@ -58,23 +58,38 @@ npm run serve # The server will run on port 8001
 
 The previous image is the main screen of the web app, in the left side you will find the users list and in the right side their tasks.
 
-### 2. Update the uses
+### 2. Update the user's information
 
-The pencil button in the user's right shows a dialog in which his information could be updated. You can edit the user's name and when you finish, the OK button must be pressed to save the changes.
+Click the pencil button in the user's right, it shows a dialog in which his information could be updated. You can edit the user's name and when you finish, press the OK button to save the changes.
 
 ![alt text](https://i.ibb.co/G9m5LnY/image.png "Logo Title Text 1")
 
+### 3. Delete users
 
+Press the thrash button in the right of the user, it will destroy his information and his tasks in the system.
 
-the eye allows to see the tasks of a determined user,, and the thrash destroy the user and his tasks in the system.
-
+### 4. List the tasks of a single user
 
 When the app's user clicks on the eye button, the right side of screen will change and it will show the next view. Here will be all tasks of user 
 
 ![alt text](https://i.ibb.co/51nM2Xk/image.png "Logo Title Text 1")
 
-![alt text](https://i.ibb.co/mRs3wzW/image.png "Logo Title Text 1")
+### 5. Create tasks
+
+Below the "TASKS" title, you will find a Add Task button, please press it. Then it will shown a dialog with description field of task. When you press the OK button, the task will be saved in the information of the selected user.
+
+![alt text](https://i.ibb.co/DknG6Sc/image.png "Logo Title Text 1")
+
+### 6. Update tasks
+
+In the task's right, press in the pencil button, it show a dialog with description and state fields to be modified.
 
 ![alt text](https://i.ibb.co/9ZJFtk8/image.png "Logo Title Text 1")
 
-![alt text](https://i.ibb.co/DknG6Sc/image.png "Logo Title Text 1")
+### 7. Delete tasks
+
+You could delete a task pressing the trash button in the right side of the task.
+
+### 8. Test REST endpoints manually
+
+In this [link](https://www.getpostman.com/collections/990a93dc2b6c0417f018) you will find a POSTMAN Collection, in which are the services used in the app.
