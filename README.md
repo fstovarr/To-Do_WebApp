@@ -52,25 +52,25 @@ npm run serve # The server will run on port 8000
 
 ## Tests
 
-### 1. View the list of users
+### 1. Show the list of users
 
 ![alt text](https://i.ibb.co/fn2BQcm/image.png "Logo Title Text 1")
 
-The previous image is the main screen of the web app, in the left side you will find the users list and in the right side their tasks.
+The previous image is the main screen of the web app, on the left side you will find the users list and on the right side their tasks.
 
 ### 2. Update the user's information
 
-Click the pencil button in the user's right, it shows a dialog in which his information could be updated. You can edit the user's name and when you finish, press the OK button to save the changes.
+Click the pencil button to the right of the user, it will shown a dialog box in which his information could be updated. You can edit the user's name and when you finish, press the OK button to save the changes.
 
 ![alt text](https://i.ibb.co/G9m5LnY/image.png "Logo Title Text 1")
 
 ### 3. Delete users
 
-Press the thrash button in the right of the user, it will destroy his information and his tasks in the system.
+Press the thrash button to the right of the user, it will destroy his information and his tasks in the system.
 
 ### 4. List the tasks of a single user
 
-When the app's user clicks on the eye button, the right side of screen will change and it will show the next view. Here will be all tasks of user 
+When the app's user clicks on the eye button, the right side of screen will change and it will show the next view. Here will be all tasks of user.
 
 ![alt text](https://i.ibb.co/51nM2Xk/image.png "Logo Title Text 1")
 
@@ -82,13 +82,13 @@ Below the "TASKS" title, you will find a Add Task button, please press it. Then 
 
 ### 6. Update tasks
 
-In the task's right, press in the pencil button, it show a dialog with description and state fields to be modified.
+In the task's right, press in the pencil button, it will show a dialog box with description and state fields to be modified.
 
 ![alt text](https://i.ibb.co/9ZJFtk8/image.png "Logo Title Text 1")
 
 ### 7. Delete tasks
 
-You could delete a task pressing the trash button in the right side of the task.
+You could delete a task pressing the trash button on the right side of the task.
 
 ### 8. Test REST endpoints manually
 
