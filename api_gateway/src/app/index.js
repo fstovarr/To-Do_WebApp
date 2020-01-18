@@ -1,6 +1,6 @@
 import express from "express";
 import routes from "./routes";
-import { generateRoutes } from "../../util/routes_generator";
+import { generateRoutes } from "../util/routes_generator";
 
 const app = express();
 
