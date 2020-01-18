@@ -46,7 +46,7 @@ Node.js, npm and Vue installed on the machine and the port 8000 free.
 - Into `web_app` folder, run the following instructions:
 ```
 npm install
-npm run serve # The server will run on port 8001
+npm run serve # The server will run on port 8000
 ```
 - Open the browser and go to http://localhost:8080/
 
