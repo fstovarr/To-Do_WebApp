@@ -119,7 +119,11 @@
             <v-btn rounded color="accent" dark @click="dialogs.addTask = true">Add task</v-btn>
           </div>
 
-          <v-list v-if="tasks != undefined && tasks.length > 0">
+          <v-list
+            v-if="tasks != undefined && tasks.length > 0"
+            class="overflow-y-auto"
+            style="max-height: 62vh"
+          >
             <v-list-item
               v-for="item in tasks"
               :key="item.id"
@@ -169,7 +173,7 @@ import {
 } from "@mdi/js";
 
 export default Vue.extend({
-  name: "HelloWorld",
+  name: "MainPage",
   created() {
     this.states = [
       { text: "To-Do", value: "todo" },
@@ -189,7 +193,7 @@ export default Vue.extend({
     selectedUser: {},
     users: []
   }),
-  beforeMount: function() {
+  mounted: function() {
     this.loadUsers();
   },
   methods: {
@@ -236,7 +240,6 @@ export default Vue.extend({
     loadUsers: async function() {
       try {
         let response = await Http.get("/users");
-        console.log(response.data);
         this.$data.users = response.data;
       } catch (error) {
         console.error(error);
