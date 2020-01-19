@@ -4,7 +4,7 @@ const processRequest = (fn, req, res, next, public_route = false) => {
       res.status(error.response.status).json({ error: error.response.data });
     }
     else {
-      console.log(error);
+      console.error(error);
       res.status(500).json({ error: error.message });
     }
   });
