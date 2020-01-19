@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 services:
   dbusers:
     image: mysql
@@ -50,7 +50,7 @@ services:
     ports:
     - "3000:3000"
     environment: 
-        DB_HOST: dbusers
+        DB_HOST: dbtasks
         DB_PORT: 3306
         DB_USERNAME: root
         DB_PASSWORD: 12345678

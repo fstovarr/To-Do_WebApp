@@ -1,13 +1,17 @@
-version: '3'
+# Reference the service that you want to extend
+version: '2'
 services:
-  db:
+  dbusers:
+    scale: 1
+    start_on_create: true
+  dbtasks:
     scale: 1
     start_on_create: true
   to-do_ms:
-    scale: 2
+    scale: 1
     start_on_create: true
   users_ms:
-    scale: 2
+    scale: 1
     start_on_create: true
   api_gateway:
     scale: 2
