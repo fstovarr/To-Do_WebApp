@@ -4,7 +4,7 @@ import { URLS } from "./constants";
 const Http = {
   users: axios.create({
     baseURL: URLS.users,
-    timeout: 6000
+    timeout: 6000,
   }),
   tasks: axios.create({
     baseURL: URLS.tasks,

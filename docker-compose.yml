@@ -1,0 +1,72 @@
+version: '3'
+services:
+  dbusers:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+    ports:
+    - "3306:3306"
+  dbtasks:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+    volumes:
+      - mysql-volume2:/var/lib/mysql
+    ports:
+    - "3308:3306"
+  api_gateway:
+    build: ./api_gateway
+    ports:
+    - "8001:8001"
+    depends_on:
+    - to-do_ms
+    - users_ms
+    links:
+    - to-do_ms
+    - users_ms
+    environment: 
+        USERS_HOST: users_ms
+        TASKS_HOST: to-do_ms
+        USERS_PORT: 3000
+        TASKS_PORT: 3000
+  to-do_ms:
+    build: ./to-do_ms
+    ports:
+    - "3001:3000"
+    environment: 
+        DB_HOST: dbusers
+        DB_PORT: 3306
+        DB_USERNAME: root
+        DB_PASSWORD: 12345678
+        SECRET_KEY_BASE: b064a2dbac8757d2e7fe1f481c115d147881405b16a23a87c3dc8e21adc5d48e108a53eb2ad33d8311df8b86c614b8c1c0d9b74459c9d76d032be8483fb016bd
+    depends_on: 
+    - dbusers
+    links: 
+    - dbusers
+  users_ms:
+    build: ./users_ms
+    ports:
+    - "3000:3000"
+    environment: 
+        DB_HOST: dbusers
+        DB_PORT: 3306
+        DB_USERNAME: root
+        DB_PASSWORD: 12345678
+        SECRET_KEY_BASE: 092df65fab671d5d0874ea8502a2b8f45c9125c1288c3c5811928a65e0988777c2458916708c9281c29048cc3fbeaa1d2cb7e54057dd76ab9304002f4b7315bd
+    depends_on:
+    - dbusers
+    links:
+    - dbusers
+  lb:
+    image: rancher/lb-service-haproxy:v0.7.15
+    ports:
+    - 9797:9797/tcp
+    labels:
+      io.rancher.container.agent.role: environmentAdmin,agent
+      io.rancher.container.agent_service.drain_provider: 'true'
+      io.rancher.container.create_agent: 'true'
+volumes:
+  mysql-volume:
+  mysql-volume2:

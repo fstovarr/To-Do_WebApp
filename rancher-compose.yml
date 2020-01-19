@@ -1,0 +1,30 @@
+version: '3'
+services:
+  db:
+    scale: 1
+    start_on_create: true
+  to-do_ms:
+    scale: 2
+    start_on_create: true
+  users_ms:
+    scale: 2
+    start_on_create: true
+  api_gateway:
+    scale: 2
+    start_on_create: true
+    drain_timeout_ms: 10000   
+  lb:
+    scale: 1
+    lb_config:
+      port_rules:
+      - priority: 1
+        protocol: https
+        source_port: 9797
+        target_port: 8001
+        service: api_gateway
+    health_check:
+      port: 42
+      interval: 2000
+      unhealthy_threshold: 3
+      healthy_threshold: 2
+      response_timeout: 2000

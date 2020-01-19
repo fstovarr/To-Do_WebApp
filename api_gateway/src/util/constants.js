@@ -1,4 +1,4 @@
 export const URLS = {
-  users: "http://localhost:3000",
-  tasks: "http://localhost:3001",
+  users: `http://${process.env.USERS_HOST}:${process.env.USERS_PORT}`,
+  tasks: `http://${process.env.TASKS_HOST}:${process.env.TASKS_PORT}`,
 };
