@@ -1,45 +1,29 @@
 # To-Do_WebApp
 
+## Architecture
+
+The next image shows the Block Diagram for the present system. Below this section, you will find the instructions to run the servers and the way to run tests to prove its correct operation.
+
+![Architecture block diagram](https://i.imgur.com/zMP1LUt.png)
+
+The platform must be scalable and flexible, so all the micro services and other components are dockerized and ready to execute with a sofware of Container Orchestration, like Rancher Server or Kubernetes. This software will allow to the system to scale according to its growth.
+
 ## Servers configuration
 
 First of all, clone this repository `git clone https://github.com/fstovarr/To-Do_WebApp.git`
 Below you will find the instructions to run the system's servers:
 
-### 1. Users micro-service:
+### 1. Run all microservices with Docker
 Pre-requisites:
-Ruby 2.6.3, Ruby on Rails framework and MySQL installed on the machine.
+Docker and docker-compose installed on the machine and the ports 3000, 3001 and 8001 free.
 
-- Open the file `users_ms/config/database.yml` and edit the username and password fields with the credentials of MySQL. (Note that MySQL must be running on port 3306)
-- Into `users_ms` folder, run the following instructions:
+- Into the main folder (To-Do_WebApp) execute the next code in the console.
 ```
-bundle install
-rails db:drop db:create db:migrate db:seed
-rails server --port 3000
+docker-compose up --build
 ```
+- Wait until all servers start.
 
-### 2. Tasks micro-service:
-Pre-requisites:
-Ruby 2.6.3, Ruby on Rails framework and MySQL installed on the machine.
-
-- Open the file `to-do_ms/config/database.yml` and edit the username and password fields with the credentials of MySQL. (Note that MySQL must be running on port 3306)
-- Into `to-do_ms` folder, run the following instructions:
-```
-bundle install
-rails db:drop db:create db:migrate db:seed
-rails server --port 3001
-```
-
-### 3. API-Gateway:
-Pre-requisites:
-Node.js and npm installed on the machine and the port 8001 free.
-
-- Into `api_gateway` folder, run the following instructions:
-```
-npm install
-npm run start # The server will run on port 8001
-```
-
-### 4. WebApp:
+### 2. WebApp:
 Pre-requisites:
 Node.js, npm and Vue installed on the machine and the port 8000 free.
 
