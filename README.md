@@ -10,12 +10,15 @@ The platform must be scalable and flexible, so all the micro services and other 
 
 ## Servers configuration
 
-First of all, clone this repository `git clone https://github.com/fstovarr/To-Do_WebApp.git`
+- Clone this repository `git clone https://github.com/fstovarr/To-Do_WebApp.git`
+- Open the cloned folder `cd To-Do_WebApp`
+- Change to master_2 branch `git checkout master_2`
+
 Below you will find the instructions to run the system's servers:
 
 ### 1. Run all microservices with Docker
 Pre-requisites:
-Docker and docker-compose installed on the machine and the ports 3000, 3001 and 8001 free.
+Docker and docker-compose installed on the machine and the ports 3306, 3000, 3001 and 8001 free.
 
 - Into the main folder (To-Do_WebApp) execute the next code in the console.
 ```
